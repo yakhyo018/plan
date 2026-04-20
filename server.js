@@ -16,11 +16,12 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 routing code
-app.get("/hello", function(req, res){
-    res.end("<h1>Hello world</h1>");
-})
-app.get("/banList", function(req, res){
-    res.end("<h2>you are in ban list</h2>");
+app.post("/create-item", (req, res) => {
+    console.log("req.body");
+    res.json({test:"succes"}); 
+});
+app.get("/", function(req, res){
+    res.render("harid.ejs");
 })
 const server = http.createServer(app);
 let PORT = 8000;
