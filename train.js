@@ -41,7 +41,6 @@ const { workerData } = require("node:worker_threads");
 // ==============//
 
 // Async functionlar haqida 
-
 // async function maslahatBering(a) {
 //     if ( typeof a !== "number") throw new Error("insert a number");
 //     else if (a <= 20) return list[0];
@@ -60,7 +59,7 @@ const { workerData } = require("node:worker_threads");
     
 // }
 
-/* Then/Catch bilan chaqirish
+/* Cll via Then/Catch bilan chaqirish
 // console.log("passed here");
 // maslahatBering(30).then(data => {
 //     console.log("Javob", data);
@@ -69,7 +68,7 @@ const { workerData } = require("node:worker_threads");
 // });
 // console.log("passed here");
 
-/* Await bilan chaqirish*/
+/* Call vai Await bilan chaqirish*/
 // async function run() {
 //     let javob = await maslahatBering(20);
 //     console.log(javob);
@@ -82,6 +81,7 @@ const { workerData } = require("node:worker_threads");
 // }
 // run();
     
+//CallBack function
 function maslahatBering(a, callback) {
     if ( typeof a !== "number") callback("insert number", null);
     else if (a <= 20) callback(null, list[0]);
@@ -96,7 +96,7 @@ function maslahatBering(a, callback) {
     }
   }
 
-  console.log("passed here 0");
+  console.log("passed here 0");  
   maslahatBering(65, (err, data) => {
     if (err) console.log("ERROR:", err);
     else {
