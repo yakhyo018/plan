@@ -27,11 +27,10 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 // 4 routing code
 app.post("/create-item", (req, res) => {
-    console.log("req.body");
-    res.json({test:"succes"}); 
+     
 });
 app.get("/", function(req, res){
-    res.render("harid.ejs");
+    res.render("reja.ejs");
 })
 
 app.get("/author", function(req, res){
@@ -41,6 +40,6 @@ app.get("/author", function(req, res){
 const server = http.createServer(app);
 let PORT = 8000;
 server.listen(PORT, function(){
-    console.log(`the server succesfully running on ${PORT}`)
+    console.log(`the server succesfully running on ${PORT}, http://localhost:${PORT}`);
 });
 
