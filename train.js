@@ -1,17 +1,27 @@
+// MIT TASK C
+function checkContent(a, b) {
+  if (a.length !== b.length) return false;
 
-function countDigits(str) {
-    let count = 0;
-
-    for (let char of str) {
-        if (!isNaN(char) && char !== " ") {
-            count++;
-        }
-    }
-
-    return count;
+  return a.split("").sort().join("") === b.split("").sort().join("");
 }
 
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+console.log(checkContent("mitgroup", "gmtiprou"));
+
+
+
+// function countDigits(str) {
+//     let count = 0;
+
+//     for (let char of str) {
+//         if (!isNaN(char) && char !== " ") {
+//             count++;
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
 
 
 
