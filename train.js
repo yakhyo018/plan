@@ -1,14 +1,57 @@
-// MIT TASK C
-function checkContent(a, b) {
-  if (a.length !== b.length) return false;
+//MIT TASK D
 
-  return a.split("").sort().join("") === b.split("").sort().join("");
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  getTime() {
+    return new Date().toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  getStock() {
+    const time = this.getTime();
+    return `hozir ${time} da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qoldi!`;
+  }
+
+  sell(product, amount) {
+    if (this[product] >= amount) {
+      this[product] -= amount;
+      console.log(`${this.getTime()} da ${amount} ${product} sotildi`);
+    } else {
+      console.log(`Yetarli ${product} yoq!`);
+    }
+  }
+
+  addProduct(product, amount) {
+    this[product] += amount;
+    console.log(`${this.getTime()} da ${amount} ta ${product} qoshildi!`);
+  }
 }
 
-console.log(checkContent("mitgroup", "gmtiprou"));
+const myShop = new Shop(10, 7, 5);
+console.log(myShop.getStock());
+myShop.sell("non", 2);
+myShop.sell("cola", 2);
+myShop.sell("lagmon", 2);
+myShop.addProduct("cola", 5);
+console.log(myShop.getStock());
 
+// MIT TASK C
+// function checkContent(a, b) {
+//   if (a.length !== b.length) return false;
 
+//   return a.split("").sort().join("") === b.split("").sort().join("");
+// }
 
+// console.log(checkContent("mitgroup", "gmtiprou"));
+
+//MIT TASK B
 // function countDigits(str) {
 //     let count = 0;
 
@@ -22,8 +65,6 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 // }
 
 // console.log(countDigits("ad2a54y79wet0sfgb9"));
-
-
 
 /* CallBack function o'rganish */
 
@@ -67,7 +108,7 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 
 // ==============//
 
-// Async functionlar haqida 
+// Async functionlar haqida
 // async function maslahatBering(a) {
 //     if ( typeof a !== "number") throw new Error("insert a number");
 //     else if (a <= 20) return list[0];
@@ -81,9 +122,9 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 //              resolve(list[5]);
 //         }, 5000);
 //         })
-        
+
 //     }
-    
+
 // }
 
 /* Cll via Then/Catch bilan chaqirish
@@ -107,7 +148,7 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 //      console.log(javob);
 // }
 // run();
-    
+
 //CallBack function
 // function maslahatBering(a, callback) {
 //     if ( typeof a !== "number") callback("insert number", null);
@@ -123,7 +164,7 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 //     }
 //   }
 
-//   console.log("passed here 0");  
+//   console.log("passed here 0");
 //   maslahatBering(65, (err, data) => {
 //     if (err) console.log("ERROR:", err);
 //     else {
@@ -131,7 +172,6 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 //     }
 //   })
 //   console.log("passed here 1");
-
 
 /* MIT TASK */
 // function countLatter(e,engineer) {
@@ -144,4 +184,3 @@ console.log(checkContent("mitgroup", "gmtiprou"));
 //         return i
 // }
 // console.log("javob:", countLatter("e", "engineer"))
-
