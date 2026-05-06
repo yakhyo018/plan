@@ -1,46 +1,61 @@
+
+
+
+
+// MIT TASK E
+
+function getReverse(a) {
+  let result = ""
+  for (let i = a.length -1; i >= 0; i--) {
+    result += a[i]
+  }
+  return result
+}
+console.log(getReverse("hello"));
+
 //MIT TASK D
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  getTime() {
-    return new Date().toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  }
+//   getTime() {
+//     return new Date().toLocaleTimeString("en-GB", {
+//       hour: "2-digit",
+//       minute: "2-digit",
+//     });
+//   }
 
-  getStock() {
-    const time = this.getTime();
-    return `hozir ${time} da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qoldi!`;
-  }
+//   getStock() {
+//     const time = this.getTime();
+//     return `hozir ${time} da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qoldi!`;
+//   }
 
-  sell(product, amount) {
-    if (this[product] >= amount) {
-      this[product] -= amount;
-      console.log(`${this.getTime()} da ${amount} ${product} sotildi`);
-    } else {
-      console.log(`Yetarli ${product} yoq!`);
-    }
-  }
+//   sell(product, amount) {
+//     if (this[product] >= amount) {
+//       this[product] -= amount;
+//       console.log(`${this.getTime()} da ${amount} ${product} sotildi`);
+//     } else {
+//       console.log(`Yetarli ${product} yoq!`);
+//     }
+//   }
 
-  addProduct(product, amount) {
-    this[product] += amount;
-    console.log(`${this.getTime()} da ${amount} ta ${product} qoshildi!`);
-  }
-}
+//   addProduct(product, amount) {
+//     this[product] += amount;
+//     console.log(`${this.getTime()} da ${amount} ta ${product} qoshildi!`);
+//   }
+// }
 
-const myShop = new Shop(10, 7, 5);
-console.log(myShop.getStock());
-myShop.sell("non", 2);
-myShop.sell("cola", 2);
-myShop.sell("lagmon", 2);
-myShop.addProduct("cola", 5);
-console.log(myShop.getStock());
+// const myShop = new Shop(10, 7, 5);
+// console.log(myShop.getStock());
+// myShop.sell("non", 2);
+// myShop.sell("cola", 2);
+// myShop.sell("lagmon", 2);
+// myShop.addProduct("cola", 5);
+// console.log(myShop.getStock());
 
 // MIT TASK C
 // function checkContent(a, b) {
