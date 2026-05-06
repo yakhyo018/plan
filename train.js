@@ -4,14 +4,20 @@
 
 // MIT TASK E
 
+// function getReverse(a) {
+//   let result = ""
+//   for (let i = a.length -1; i >= 0; i--) {
+//     result += a[i]
+//   }
+//   return result
+// }
+// console.log(getReverse("hello"));
+
 function getReverse(a) {
-  let result = ""
-  for (let i = a.length -1; i >= 0; i--) {
-    result += a[i]
-  }
-  return result
+  return a.split("").reverse().join("");
 }
-console.log(getReverse("hello"));
+console.log(getReverse("hello"))
+
 
 //MIT TASK D
 
